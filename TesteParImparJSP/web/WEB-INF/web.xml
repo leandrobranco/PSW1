@@ -4,9 +4,17 @@
         <servlet-name>ParImpar</servlet-name>
         <servlet-class>ParImpar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcessarParImpar</servlet-name>
+        <servlet-class>ProcessarParImpar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ParImpar</servlet-name>
         <url-pattern>/ParImpar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessarParImpar</servlet-name>
+        <url-pattern>/ProcessarParImpar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
