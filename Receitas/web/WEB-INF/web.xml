@@ -4,9 +4,17 @@
         <servlet-name>ListarIngredientes</servlet-name>
         <servlet-class>ListarIngredientes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarReceitas</servlet-name>
+        <servlet-class>ListarReceitas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListarIngredientes</servlet-name>
         <url-pattern>/ListarIngredientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarReceitas</servlet-name>
+        <url-pattern>/ListarReceitas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

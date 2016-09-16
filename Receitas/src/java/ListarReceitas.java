@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author RA21551055
  */
-public class ListarIngredientes extends HttpServlet {
+public class ListarReceitas extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,14 +31,34 @@ public class ListarIngredientes extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+      
+        String[] ingredientesSelecionados = request.getParameterValues("ingred");
         
-        List<Ingrediente> ingredientesSelecionaveis = buscaIngredientes();
-        request.setAttribute("ingredientesSelecionaveis", ingredientesSelecionaveis);
+        List<Receita> receitas = buscarReceitas(ingredientesSelecionados);
+                
+        request.setAttribute("receita", receitas);
         
-        request.getRequestDispatcher("selecaoIngredientes.jsp").forward(request, response);
+        request.getRequestDispatcher("receitasEncontradas.jsp").forward(request, response);
+        
         
     }
-    private List<Ingrediente> buscaIngredientes(){
+    
+    private List<Receita> buscarReceitas(String[] inds){
+        
+        List<Receita> Receita = new ArrayList<Receita>();
+        
+        Receita r1 = new Receita();
+        r1.setNome("Torda de palmito");
+        r1.setModoPreparo("Mistura tudo e vai fundo");
+        r1.setPessoas(5);
+        r1.setIngred(buscaIngredientes());
+        
+        Receita.add(r1);
+        
+        return Receita;
+    }
+    
+     private List<Ingrediente> buscaIngredientes(){
         
         List<Ingrediente> resultado = new ArrayList<Ingrediente>();
         Ingrediente i1 = new Ingrediente();

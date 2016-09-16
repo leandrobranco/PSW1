@@ -14,10 +14,15 @@
     </head>
     <body>
         <h1>Quais ingrediente voce tem?</h1>
-        <c:forEach items="${requestScope.ingredientesSelecionaveis}" var="ingrediente">
+        <form action="ListarReceitas">
             
-               <br> <input type="checkbox" name="ingred" value="${ingrediente.nome}"/> ${ingrediente.nome}
-            
-        </c:forEach>
+            <c:forEach items="${requestScope.ingredientesSelecionaveis}" var="ingrediente">
+
+                   <br> <input type="checkbox" name="ingred" value="${ingrediente.nome}"/> ${ingrediente.nome}
+
+            </c:forEach>
+
+                   <input type="Submit" value="Listar"> 
+        </form>
     </body>
 </html>
