@@ -12,6 +12,10 @@
         <servlet-name>IncluirIngrediente</servlet-name>
         <servlet-class>IncluirIngrediente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MontaFormIncluirReceita</servlet-name>
+        <servlet-class>MontaFormIncluirReceita</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListarIngredientes</servlet-name>
         <url-pattern>/ListarIngredientes</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>IncluirIngrediente</servlet-name>
         <url-pattern>/IncluirIngrediente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MontaFormIncluirReceita</servlet-name>
+        <url-pattern>/MontaFormIncluirReceita</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
