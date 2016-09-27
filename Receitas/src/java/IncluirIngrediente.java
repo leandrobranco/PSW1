@@ -37,18 +37,14 @@ public class IncluirIngrediente extends HttpServlet {
         try {
             //Carrega o driver na memória
             Class.forName("org.apache.derby.jdbc.ClientDriver");
-            
             // Conecta ao banco
            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample","app", "app");
-           
              // Cria comando
             java.sql.Statement comando = con.createStatement(); 
-            
             //executa um update
             
             String nome = request.getParameter("nome");
             String calorias = request.getParameter("calorias");
-            
             String query = "insert into ingrediente values ('" + nome + "', " + calorias + ")";
             int linhas = comando.executeUpdate(query);
 
@@ -60,8 +56,6 @@ public class IncluirIngrediente extends HttpServlet {
             //*** Finaliza transação e conexão
             //transacao.close();
             //con.close()
-         
-            
             
         } catch (Exception ex) {
             
